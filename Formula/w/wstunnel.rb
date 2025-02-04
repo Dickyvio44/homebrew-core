@@ -1,8 +1,8 @@
 class Wstunnel < Formula
   desc "Tunnel all your traffic over Websocket or HTTP2"
   homepage "https://github.com/erebe/wstunnel"
-  url "https://github.com/erebe/wstunnel/archive/refs/tags/v10.1.8.tar.gz"
-  sha256 "6717e361d5810349cdc30e3ce78e0883bdad3c55c228a7684dc5dff856419124"
+  url "https://github.com/erebe/wstunnel/archive/refs/tags/v10.1.9.tar.gz"
+  sha256 "64977a8a453b4f35f8722dfb339d7a0c3cd197c513ef885269ece556294b1d1b"
   license "BSD-3-Clause"
   head "https://github.com/erebe/wstunnel.git", branch: "main"
 
@@ -27,7 +27,7 @@ class Wstunnel < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "wstunnel-cli")
   end
 
   test do
