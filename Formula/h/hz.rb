@@ -4,6 +4,7 @@ class Hz < Formula
   url "https://github.com/cloudwego/hertz/archive/refs/tags/cmd/hz/v0.9.1.tar.gz"
   sha256 "0d894328108891d43355c92a7ccb48630fd9c1b9ae8306df81f8ba547ea268ea"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/cloudwego/hertz.git", branch: "develop"
 
   livecheck do
