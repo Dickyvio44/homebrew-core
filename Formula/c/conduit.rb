@@ -1,8 +1,8 @@
 class Conduit < Formula
   desc "Streams data between data stores. Kafka Connect replacement. No JVM required"
   homepage "https://conduit.io/"
-  url "https://github.com/ConduitIO/conduit/archive/refs/tags/v0.12.3.tar.gz"
-  sha256 "cda35d6ddafa5b4aac7607cd0ba3438658bb806a8c114f28fec3613c007cac03"
+  url "https://github.com/ConduitIO/conduit/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "836ee4a93124193195770f97f3101353909722e5a317411ac409ed49517ae2b0"
   license "Apache-2.0"
   head "https://github.com/ConduitIO/conduit.git", branch: "main"
 
@@ -37,8 +37,8 @@ class Conduit < Formula
       $stdout.reopen(file)
       pid = fork do
         # Run conduit with random free ports for gRPC and HTTP servers
-        exec bin/"conduit", "--grpc.address", ":0",
-                            "--http.address", ":0"
+        exec bin/"conduit", "--api.grpc.address", ":0",
+                            "--api.http.address", ":0"
       end
       sleep(5)
       # Kill process
